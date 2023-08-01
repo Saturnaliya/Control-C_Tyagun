@@ -31,3 +31,28 @@ void FillRandArr(string[] arr)
         }        
     }
 }
+int GetSizeOfSecondArray(string[] arr)
+{   
+    int secondSize = 0;
+     for (int i = 0; i < size; i++)
+    {
+        if(arr[i].Length < n)
+        {
+            secondSize++;
+        }
+    }
+    return secondSize;
+}
+string[] RotateElemOfArr(string[] arr)
+{
+    string[] arrayTwo = new string[GetSizeOfSecondArray(arrayOne)];
+    for (int i = 0, j = 0; i < size; i++)
+    {
+        if(arr[i].Length < n)
+        {
+            arrayTwo[j] = arr[i];
+            j++;
+        }
+    }
+    return arrayTwo;
+}
