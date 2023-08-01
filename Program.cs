@@ -18,3 +18,16 @@ else
     Console.WriteLine($"[{String.Join(", ", arrayOne)}] -> [{String.Join(", ", arrayTwo)}]");
     Console.WriteLine();
 }
+void FillRandArr(string[] arr)
+{
+    Random rand = new Random();
+    string AllSymbols = "/.,mnbvcxz\asdfghjkl;'][poiuytrewq`1234567890-=]";
+    for (int i = 0; i < size; i++)
+    {
+        int randElemSize = rand.Next(1,7);
+        for (int j = 0; j < randElemSize; j++)
+        {
+            arr[i] += AllSymbols[rand.Next(0,AllSymbols.Length)];
+        }        
+    }
+}
